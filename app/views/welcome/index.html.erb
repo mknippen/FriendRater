@@ -1,0 +1,4 @@
+<h1> Welcome to FaceMash! </h1>
+
+<p> Login Below to Start Playing </p>
+<%= link_to 'Login', Koala::Facebook::OAuth.new('345893595441870', 'f6c647d7783ebcd16d516ad85be96c8b').url_for_oauth_code(callback: authenticate_url) %>

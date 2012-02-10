@@ -1,0 +1,33 @@
+<h1>Listing Users</h1>
+
+<p> Total Users: <%= @users.count %> </p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Fb_id</th>
+    <th>W/L</th>
+    <th>Rating</th>
+    <th>Male</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.fb_id %></td>
+    <td><%= user.wins %>/<%= user.losses %></td>
+    <td><%= user.rating %></td>
+    <td><%= user.male %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_user_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  fb_id: MyString
+  wins: 1
+  losses: 1
+  rank: 1
+  male: false
+
+two:
+  name: MyString
+  fb_id: MyString
+  wins: 1
+  losses: 1
+  rank: 1
+  male: false

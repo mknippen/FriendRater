@@ -1,0 +1,11 @@
+<h1>Rate Your Friends!</h1>
+<p>Click on the image that you prefer</p>
+<table>
+  <tr>
+    <td><%= link_to(image_tag("http://graph.facebook.com/#{@user1.fb_id}/picture?type=large"), choose_path(winner_id: @user1.id, loser_id: @user2.id, male: @male)) %> </td>
+    <td><%= link_to(image_tag("http://graph.facebook.com/#{@user2.fb_id}/picture?type=large"), choose_path(winner_id: @user2.id, loser_id: @user1.id, male: @male)) %> </td>
+  </tr>
+</table>
+<%= @male ? link_to("Show Female Version", vote_path(male: !@male)) : link_to("Show Male Version", vote_path(male: !@male)) %> | <%= link_to("Skip This Vote", vote_path(male: @male))%> | <%= link_to("Logout", logout_path)%>
+
+
