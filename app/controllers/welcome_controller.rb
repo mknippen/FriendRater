@@ -16,7 +16,7 @@ class WelcomeController < ApplicationController
     @current_user.save
     session[:current_id] = @current_user.id
     
-    logger.debug @graph.get_object("me?fields=id")
+    #logger.debug @graph.get_object("me?fields=id")
     @friends = @graph.get_connections("me", "friends?fields=id,name,gender")
     @friends.each do |friend|
       fb_id, name, gender = friend.values
@@ -32,7 +32,7 @@ class WelcomeController < ApplicationController
   def logout
     session[:current_id] = nil
     session[:access_token] = nil
-    redirect_to root_url
+    redirect_to login_url
   end
   
 end
